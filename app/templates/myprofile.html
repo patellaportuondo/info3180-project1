@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+  {% include 'flash_messages.html' %}
+  
+  <div class= "gridview">
+      
+                <div class="container">    
+                <div class="jumbotron">
+                  <div class="row">
+                      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                          <img src="{{url_for('static', filename='uploads/'+user.photo_name)}}" alt="user photo" class="userimg">
+                      </div>
+                      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                          <div class="container" style="border-bottom:1px solid black">
+                            <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+                          </div>
+                            <hr>
+                          <ul class="container details">
+                            <p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{ user.email }}</p>
+                            <p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>{{ user.location }}</p>
+                            <p><span class="glyphicon glyphicon-calendar one" style="width:50px;"></span>Joined on {{ user.date_created.strftime("%B %d, %Y") }}</p>
+                          </ul>
+                      </div>
+                  </div>
+                        <div id="userbio">
+                            <h3>About me</h3>
+                            <p>{{ user.biography }}</p>
+                        </div>
+                        <div class="tocenter">
+                            <button type="button" class="btn btn-primary">Send Message</button>
+                            <button type="button" class="btn btn-success">Follow</button>
+                        </div>
+                    </div>
+                </div>
+        
+            
+  </div>
+  
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+  {% include 'flash_messages.html' %}
+  <div class="gridview">
+      {% for user in users %}
+      <div class="container" id="containerid">
+	<div class="row">
+		<div class="span4 well">
+            <div class="row">
+        		<div class="span1" id="spacediv"><img class= "userimg" src="{{url_for('static', filename='uploads/'+ user.photo_name)}}" /></div>
+        		<div class="span2" id="spacediv">
+                  	<p><strong>{{ user.first_name }} {{ user.last_name }}</strong></p>
+                  	<p><span class="glyphicon glyphicon-user one" style="width:50px;"></span>{{ user.gender }}</p>
+                    <p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>{{ user.location }}</p>
+        		</div>
+        		<div id="spacediv"><a class="span3" href="{{ url_for('myprofile', filename= user.id ) }}"><button type="button" class="btn btn-success" >View Profile</button></a></div>
+        	</div>
+        </div>
+	</div>
+</div>
+      
+    
+      {% endfor %}
+    
+    </div>
+
+
+{% endblock %}
