@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 UPLOAD_FOLDER = './app/static/uploads'
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "change this to be a more random key"
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://project1:password123@localhost/project1"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://uvobyvmjzdcail:f436aea1af4e83541523bcb31aed27bae0f007b6893b794110e1a5cccf8a7b5e@ec2-54-204-44-140.compute-1.amazonaws.com:5432/d3nbtcjglkvj5e'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True # added just to suppress a warning
 
 db = SQLAlchemy(app)
